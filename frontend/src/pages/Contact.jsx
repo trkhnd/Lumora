@@ -3,8 +3,8 @@ export default function Contact() {
     <main className="page">
       <section className="content-card">
         <h1>Contact</h1>
-        <p>Email: hello@lumora.app</p>
-        <p>This is a starter contact page for the project.</p>
+        <p>Email: danialtorehan8@gmail.com</p>
+        <p>We build thoughtful digital experiences for real people.</p>
       </section>
     </main>
   );

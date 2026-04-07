@@ -19,11 +19,7 @@ export default function Login() {
 
     try {
       const data = await loginUser(form);
-
-      // save token
       localStorage.setItem("token", data.token);
-
-      // redirect to dashboard
       navigate("/dashboard");
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
@@ -33,6 +29,7 @@ export default function Login() {
   return (
     <main className="page">
       <div className="form-card">
+        <div className="badge">Welcome back</div>
         <h1>Login</h1>
 
         <form onSubmit={handleSubmit}>
@@ -52,7 +49,9 @@ export default function Login() {
             onChange={handleChange}
           />
 
-          <button type="submit">Login</button>
+          <button type="submit" className="btn btn-light full">
+            Login
+          </button>
         </form>
       </div>
     </main>

@@ -23,16 +23,14 @@ export default function Navbar() {
           {token ? (
             <>
               <Link to="/dashboard">Dashboard</Link>
-
-              <button className="btn" onClick={handleLogout}>
+              <button className="btn btn-light" onClick={handleLogout}>
                 Logout
               </button>
             </>
           ) : (
             <>
               <Link to="/login">Login</Link>
-
-              <Link to="/register" className="btn">
+              <Link to="/register" className="btn btn-light">
                 Register
               </Link>
             </>

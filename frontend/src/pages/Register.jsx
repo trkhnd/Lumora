@@ -16,17 +16,17 @@ export default function Register() {
     e.preventDefault();
 
     try {
-      const data = await registerUser(form);
-      alert("Registered! Check your email.");
-      console.log(data);
+      await registerUser(form);
+      alert("Registered successfully. Check your email.");
     } catch (err) {
-      alert(err.response?.data?.message || "Error");
+      alert(err.response?.data?.message || "Register failed");
     }
   };
 
   return (
     <main className="page">
       <div className="form-card">
+        <div className="badge">Create your account</div>
         <h1>Register</h1>
 
         <form onSubmit={handleSubmit}>
@@ -54,7 +54,9 @@ export default function Register() {
             onChange={handleChange}
           />
 
-          <button type="submit">Create Account</button>
+          <button type="submit" className="btn btn-light full">
+            Create Account
+          </button>
         </form>
       </div>
     </main>
