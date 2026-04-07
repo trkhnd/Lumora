@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="page">
-      <div className="card">
-        <h1>Lumora</h1>
-        <p>Your AI life system starts here.</p>
-
-        <button onClick={() => setCount(count + 1)}>
-          Clicked {count} times
-        </button>
-      </div>
+    <div className="app-shell">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
